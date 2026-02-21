@@ -1,0 +1,8 @@
+# Production environment-specific secure properties
+
+salesforce:
+  username: "![]"
+  password: "![]"
+  securityToken: "![]"
+  consumerKey: "![]"
+  consumerSecret: "![]"

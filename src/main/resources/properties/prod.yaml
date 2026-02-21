@@ -1,0 +1,5 @@
+# Production environment-specific properties
+
+salesforce:
+  auth-url: ""
+  token-url: ""

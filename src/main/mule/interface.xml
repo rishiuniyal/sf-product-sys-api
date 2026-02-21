@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+    <flow name="sf-products-sys-api-main">
+        <http:listener path="/*" config-ref="http-listener-config">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:router config-ref="sf-products-sys-api-config" />
+        <error-handler ref="global-error-handler" />
+    </flow>
+    <flow name="get:\ping:sf-products-sys-api-config">
+        <flow-ref doc:name="ping-health-check-sub-flow" doc:id="29d2a9e1-b0e7-4991-bffc-b80ba82bc225" name="ping-health-check-sub-flow" />
+    </flow>
+    <flow name="get:\v1\products:sf-products-sys-api-config">
+        <flow-ref doc:name="get-sf-records-sub-flow" doc:id="7aa940c6-0968-4f67-a8e7-2ef66b56aa78" name="get-sf-records-sub-flow" />
+    </flow>
+    <flow name="post:\v1\products:application\json:sf-products-sys-api-config">
+        <flow-ref doc:name="create-sf-records-sub-flow" doc:id="bcb5fc32-7a97-4bd8-bef5-8ac6fbfc26fa" name="create-sf-records-sub-flow" />
+    </flow>
+    <flow name="put:\v1\products\(productId):application\json:sf-products-sys-api-config">
+        <flow-ref doc:name="update-records-in-sf-sub-flow" doc:id="0898b01c-2f8c-48bd-b5d5-b320b9a583b5" name="update-records-in-sf-sub-flow" />
+    </flow>
+    <flow name="delete:\v1\products\(productId):sf-products-sys-api-config">
+        <flow-ref doc:name="delete-sf-records-sub-flow" doc:id="3163e0e6-b059-4876-8a23-3956c97922dc" name="delete-sf-records-sub-flow" />
+    </flow>
+</mule>

@@ -1,0 +1,9 @@
+# Development environment-specific properties
+
+
+salesforce:
+  auth-url: ""
+  token-url: ""
+
+autodiscovery:
+  id: "12345"
