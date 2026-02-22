@@ -16,16 +16,16 @@
     <flow name="get:\ping:sf-products-sys-api-config">
         <flow-ref doc:name="ping-health-check-sub-flow" doc:id="29d2a9e1-b0e7-4991-bffc-b80ba82bc225" name="ping-health-check-sub-flow" />
     </flow>
-    <flow name="get:\v1\products:sf-products-sys-api-config">
-        <flow-ref doc:name="get-sf-records-sub-flow" doc:id="7aa940c6-0968-4f67-a8e7-2ef66b56aa78" name="get-sf-records-sub-flow" />
+    <flow name="put:\v1\sys\products\(productId):application\json:sf-products-sys-api-config">
+        <flow-ref doc:name="update-records-in-sf-sub-flow" doc:id="bc979089-e904-4e14-973a-d80be2dacd85" name="update-records-in-sf-sub-flow" />
     </flow>
-    <flow name="post:\v1\products:application\json:sf-products-sys-api-config">
-        <flow-ref doc:name="create-sf-records-sub-flow" doc:id="bcb5fc32-7a97-4bd8-bef5-8ac6fbfc26fa" name="create-sf-records-sub-flow" />
+    <flow name="delete:\v1\sys\products\(productId):sf-products-sys-api-config">
+        <flow-ref doc:name="delete-sf-records-sub-flow" doc:id="f3ed2691-9686-4ac1-badd-bb3d32de369f" name="delete-sf-records-sub-flow" />
     </flow>
-    <flow name="put:\v1\products\(productId):application\json:sf-products-sys-api-config">
-        <flow-ref doc:name="update-records-in-sf-sub-flow" doc:id="0898b01c-2f8c-48bd-b5d5-b320b9a583b5" name="update-records-in-sf-sub-flow" />
+    <flow name="get:\v1\sys\products:sf-products-sys-api-config">
+        <flow-ref doc:name="get-sf-records-sub-flow" doc:id="ed6369aa-b138-4ea7-910f-3360a072eaeb" name="get-sf-records-sub-flow" />
     </flow>
-    <flow name="delete:\v1\products\(productId):sf-products-sys-api-config">
-        <flow-ref doc:name="delete-sf-records-sub-flow" doc:id="3163e0e6-b059-4876-8a23-3956c97922dc" name="delete-sf-records-sub-flow" />
+    <flow name="post:\v1\sys\products:application\json:sf-products-sys-api-config">
+        <flow-ref doc:name="create-sf-records-sub-flow" doc:id="a08a9809-dbfc-404f-84fa-22049b046f74" name="create-sf-records-sub-flow" />
     </flow>
 </mule>
