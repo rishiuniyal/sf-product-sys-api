@@ -1,0 +1,29 @@
+# Environment-agnostic properties
+
+http:
+  host: '0.0.0.0'
+  port: '8081'
+  readTimeout: '60000'
+  idleTimeout: '30000'
+  
+  request:
+    responseTimeout: "30000"
+
+application:
+  name: "sf-products-sys-api"
+  version: "v1"
+  
+reconnection:
+  attempts: "3"
+  frequency: "5000"
+  
+debug:
+  category: "debug.sf.com"
+
+sf-query: 
+  fields: "Id,ExternalId,Name,Description,ProductCode,CurrencyCode__c,ProductPrice__c"
+  limitDefault: "10"
+  offsetDefault: "0"
+  
+sf:
+  object: "Product2"
