@@ -4,7 +4,7 @@
 
 	<groupId>020f4d86-fd4b-4d1d-9b27-999b89093231</groupId>
 	<artifactId>sf-products-sapi</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>mule-application</packaging>
 	<name>sf-products-sys-api</name>
 
@@ -73,30 +73,6 @@
 					</cloudhub2Deployment>
 					<classifier>mule-application</classifier>
 					<sharedLibraries>
-						<!-- <sharedLibrary>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-config</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-core</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-core</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-crypto</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-beans</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-context</artifactId>
-						</sharedLibrary> -->
 					</sharedLibraries>
 				</configuration>
 			</plugin>
