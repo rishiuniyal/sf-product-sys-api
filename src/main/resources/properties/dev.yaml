@@ -3,7 +3,7 @@
 
 salesforce:
   auth-url: ""
-  token-url: ""
+  token-url: "https://login.salesforce.com/services/oauth2/token"
 
 autodiscovery:
   id: "20753238"

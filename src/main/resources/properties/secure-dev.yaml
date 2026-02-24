@@ -3,4 +3,8 @@
 salesforce:
   username: "![0lQCtYEg4Y3zjVVHrEeggjkkdU+B8tnZwwpyrsSeR2lRXSNgIkG1AseCumALDfMo]"
   consumerKey: "![Nx2UpBZyEd0bVGfX8idLfglwU/i98LDROhpNWPUiDwlYaIHkeNRQSvOl+hpljd9K+d/jgnHWEB6STotN8oDQGfRtZWA/4v5bVDSIIPGBr8VrPA/rDMK+HQUbQJy+nY/I]"
-  consumerSecret: "![UFBnSLW1WRRu4nAAWhY/EHrX8G6Sq+rNayvBdGHhLfpz4oohSA8IIdyRBicUGpIRkzg9CsYYrSxkZYAH0K7rL6A+H5rp79wUZ6XDsbCpG64=]"
+  consumerSecret: ""
+  
+  oauth:
+    cert:
+      password: "![ZjTlrAG1Iut+gjk2xmJW4A==]"

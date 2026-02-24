@@ -3,3 +3,6 @@
 salesforce:
   auth-url: ""
   token-url: ""
+  
+autodiscovery:
+  id: ""
