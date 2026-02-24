@@ -8,13 +8,11 @@
     <configuration-properties doc:name="Configuration properties" doc:id="1d9c81de-790e-4832-b752-60c31f8d8215" file="properties/${mule.env}.yaml" doc:description="Environment-specific properties" />
     <secure-properties:config name="secure-properties-config" doc:name="Secure Properties Config" doc:id="9174e84d-c26a-4ac8-b9b7-e5ddec0ec37b" doc:description="Environment-specific secure properties" file="properties/secure-${mule.env}.yaml" key="${mule.key}" />
     <salesforce:sfdc-config name="salesforce-config" doc:name="Salesforce Config" doc:id="5eebd9a9-eacc-4f26-a744-fd9fc17524ef">
-        <salesforce:jwt-connection keyStore="certs/sf_keystore.jks" storePassword="mule@1234" principal="${secure::salesforce.username}" consumerKey="${secure::salesforce.consumerKey}">
+        <salesforce:jwt-connection keyStore="certs/sf_keystore.jks" storePassword="${secure::salesforce.oauth.cert.password}" principal="${secure::salesforce.username}" consumerKey="${secure::salesforce.consumerKey}" tokenEndpoint="${salesforce.token-url}">
             <reconnection failsDeployment="true">
                 <reconnect frequency="${reconnection.frequency}" count="${reconnection.attempts}" />
             </reconnection>
         </salesforce:jwt-connection>
     </salesforce:sfdc-config>
-    <global-property doc:name="Global Property" doc:id="655b4e5f-c05d-4fce-985b-d65fefd16715" name="mule.env" value="dev" />
-    <global-property doc:name="Global Property" doc:id="e149dee7-501a-41a0-8914-b991a0061991" name="mule.key" value="sfr2mulesoft2026" />
     <api-gateway:autodiscovery apiId="${autodiscovery.id}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="71a7daae-53f0-4794-b9e4-79fedfba5963" flowRef="sf-products-sys-api-main" />
 </mule>
